@@ -23,3 +23,31 @@ Using Inheritance convert the above into following patterns.
 1. Prototypal Pattern
 2. Pseudoclassical Pattern
 3. Classes
+
+class User {
+  constructor (name) {
+    this.name = name;
+    this.score = 0;
+  }
+  increaseScore () {
+    return ++this.score;
+  }
+  decreaseScore () {
+    return --this.score;
+  }
+}
+
+let poachie = new User("poachie")
+
+class PaidUser extends User {
+  constructor(name, balance) {
+    super(name);
+    this.balance = balance;
+  }
+  
+  increaseBalance() {
+    return this.balance++
+  }
+}
+
+let panther = new PaidUser("Panther", 10);

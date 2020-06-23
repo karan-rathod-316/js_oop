@@ -29,3 +29,38 @@ Every Booklist should have a few methods:
   * [ ] Change the last book read to be the book that just got finished
   * [ ] Change the current book to be the next book to be read
   * [ ] Change the next book to be read property to be the first unread book you find in the list of books
+
+
+<!-- JS Code -->
+<!-- Class BookList -->
+  class BookList{
+    constructor(read,notRead,nextBook,currentBook,lastBook){
+        this.read = read;
+        this.notRead = notRead;
+        this.nextBook = nextBook;
+        this.currentBook = currentBook;
+        this.lastBook = lastBook;
+        this.allBooks = [];
+    }
+    add(book){
+        this.allBooks.push(book);
+    }
+    finishCurrentBook(){
+        this.currentBook.isRead = true;
+        this.currentBook.readDate = new Date(Date.now());
+        this.lastBook = this.currentBook;
+        this.currentBook = this.nextBook;
+        this.nextBook = //Confused with what to put here;
+    }
+}
+<!-- Class Book -->
+class Book{
+    constructor(title,genre,author,isRead,readDate){
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.isRead = isRead;
+        this.readDate = readDate;
+    }
+
+}
